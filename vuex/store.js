@@ -27,8 +27,12 @@ const mutations = {
 		state.activeNote = state.notes[0]
 	},
 
-	TOGGLE_FAVORITE(state, note) {
-		state.activeNote = note
+	TOGGLE_FAVORITE(state) {
+		state.activeNote.favorite = !state.activeNote.favorite
+	},
+
+	SET_ACTIVE_NOTE(state, note) {
+	    state.activeNote = note
 	}
 }
 
