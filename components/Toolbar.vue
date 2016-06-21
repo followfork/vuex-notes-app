@@ -1,0 +1,26 @@
+<template>
+	<div id="toolbar">
+		<i @click="addNote" class="glyphicon glyphicon-plus"></i>
+		<i @click="toggleFavorite"
+      		class="glyphicon glyphicon-star"
+      		:class="{starred: activeNote.favorite}"></i>
+		<i @click="deleteNote" class="glyphicon glyphicon-remove"></i>
+	</div>
+</template>
+
+<script>
+	import { addNote, toggleFavorite, deleteNote } from '../vuex/actions'
+
+	export default {
+		vuex: {
+			getter: {
+				activeNote: state => state.activeNote
+			},
+			actions: {
+				addNote,
+				toggleFavorite,
+				deleteNote
+			}
+		}
+	}
+</script>
